@@ -44,3 +44,55 @@ To build and run this application, ensure the following dependencies are install
 
     Linux/Windows Headers: Depending on the platform.
 
+
+
+Code Structure
+Key Classes
+
+    VideoCapture:
+
+        Handles video input from various sources.
+
+        Supports GPU-based frame processing (denoising, resizing).
+
+    FeatureTracker:
+
+        Implements object tracking using AKAZE features.
+
+        Includes recovery mechanisms for occluded/lost objects.
+
+    Utility Functions:
+
+        GPU initialization and resource cleanup.
+
+        Conversion between color spaces (BGR to Gray/HSV).
+
+Workflow
+
+    Parse command-line arguments to determine video source and tracker type.
+
+    Initialize the video capture source (webcam, RTSP stream, or file).
+
+    Detect if a CUDA-capable GPU is available; enable GPU acceleration if possible.
+
+    Process each frame:
+
+        Apply preprocessing (denoising, resizing).
+
+        Perform object tracking using the specified algorithm.
+
+    Display results in real-time.
+
+Error Handling
+
+    If no CUDA-capable device is found or GPU initialization fails, the program automatically switches to CPU mode.
+
+    Invalid tracker types or missing arguments result in an error message and program termination.
+
+Limitations
+
+    Requires OpenCV compiled with CUDA support for GPU acceleration.
+
+    Performance depends on hardware capabilities (e.g., GPU model, CPU speed).
+
+
