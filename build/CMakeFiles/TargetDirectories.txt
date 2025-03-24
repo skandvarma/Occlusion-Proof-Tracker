@@ -1,0 +1,3 @@
+/home/skand/opencv_cpp/build/CMakeFiles/tracker.dir
+/home/skand/opencv_cpp/build/CMakeFiles/edit_cache.dir
+/home/skand/opencv_cpp/build/CMakeFiles/rebuild_cache.dir
